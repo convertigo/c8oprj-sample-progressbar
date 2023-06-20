@@ -27,13 +27,13 @@ For more technical informations : [documentation](./project.md)
      <tr><td>To contribute</td><td>
 
      ```
-     progressbar=C:/Convertigo/Studio 8.2.1/workspace/progressbar/.git:branch=master
+     progressbar=https://github.com/convertigo/c8oprj-sample-progressbar.git:branch=master
      ```
      </td></tr>
      <tr><td>To simply use</td><td>
 
      ```
-     progressbar=C:/Convertigo/Studio 8.2.1/workspace/progressbar//archive/master.zip
+     progressbar=https://github.com/convertigo/c8oprj-sample-progressbar/archive/master.zip
      ```
      </td></tr>
     </table>

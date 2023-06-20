@@ -2,6 +2,7 @@
 ↓progressbar [core.Project]: 
   comment: How to use ProgressBar component
   corsOrigin: =Origin
+  version: 1.0
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓checkStatus [sequences.GenericSequence]: 🗏 sequences/checkStatus.yaml
   ↓main [sequences.GenericSequence]: 🗏 sequences/main.yaml
