@@ -1,5 +1,13 @@
 ↑isRoot: true
-comment: My First Page as root page
+comment: |
+  <h1>ProgressBar usage</h1>
+  <ul>
+  <li>First progress bar is of type 'determinate' and positioned in the Toolbar</li>
+  <li>Second progress bar has a buffer and value incrementing. Color is set to 'success' (green)</li>
+  <li>Third progress bar is of type 'indeterminate'. Color is set to 'warnning' (orange)</li>
+  <li>Fourth progress bar is fired with the 'Start' button. It call a 'main' sequence that takes time to execute. It also calls at regular interval another sequence that will give us the main sequence status. Color is set dynamically to different color, depending on the sequence's response.</li>
+  </ul>
+  <img src="doc/progressbar.gif">
 preloadPriority: high
 scriptContent: 
   - xmlizable: 
@@ -40,7 +48,7 @@ title: First page
         textValue: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: plain:Page
+            - MobileSmartSourceType: plain:Progress bar determinate in Toolbar
     ↓ButtonSet2 [ngx.components.UIDynamicElement-1588170811054]: 
       beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
       tagName: ion-buttons
@@ -56,10 +64,138 @@ title: First page
              "IconIosName": "plain"
             }'
           tagName: ion-icon
+    ↓ProgressBar [ngx.components.UIDynamicElement-1687251438831]: 
+      beanData: '{"ionBean":"ProgressBar","Value":"source:{\"filter\":\"Global\",\"project\":\"progressbar\",\"input\":\"\",\"model\":{\"data\":[{\"sharedObject\":\"router.sharedObject\"}],\"path\":\"?.progress_determinate\",\"prefix\":\"\",\"suffix\":\" || 0\",\"custom\":\"\",\"useCustom\":false}}"}'
+      tagName: ion-progress-bar
 ↓Content [ngx.components.UIDynamicElement-1489674805352]: 
   beanData: '{"ionBean":"Content"}'
   comment: Page content
   tagName: ion-content
+  ↓Div [ngx.components.UIDynamicElement-1687253324613]: 
+    beanData: '{"ionBean":"DivTag"}'
+    tagName: div
+    ↓some_text [ngx.components.UIText-1687253335924]: 
+      textValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:Progress bar with buffer:
+  ↓Break2 [ngx.components.UIDynamicElement-1687253913682]: 
+    beanData: '{"ionBean":"Break"}'
+    selfClose: true
+    tagName: br
+  ↓ProgressBar [ngx.components.UIDynamicElement-1687251402245]: 
+    beanData: |
+      '{
+       "ionBean": "ProgressBar",
+       "IonColor": "plain:success",
+       "Buffer": "source:{\"filter\":\"Global\",\"project\":\"progressbar\",\"input\":\"\",\"model\":{\"data\":[{\"sharedObject\":\"router.sharedObject\"}],\"path\":\"?.progress_buffer\",\"prefix\":\"\",\"suffix\":\" || 0.06\",\"custom\":\"\",\"useCustom\":false}}",
+       "Value": "source:{\"filter\":\"Global\",\"project\":\"progressbar\",\"input\":\"\",\"model\":{\"data\":[{\"sharedObject\":\"router.sharedObject\"}],\"path\":\"?.progress_reel\",\"prefix\":\"\",\"suffix\":\" || 0\",\"custom\":\"\",\"useCustom\":false}}"
+      }'
+    tagName: ion-progress-bar
+  ↓Break [ngx.components.UIDynamicElement-1687253729757]: 
+    beanData: '{"ionBean":"Break"}'
+    selfClose: true
+    tagName: br
+  ↓Break3 [ngx.components.UIDynamicElement-1687253927754]: 
+    beanData: '{"ionBean":"Break"}'
+    selfClose: true
+    tagName: br
+  ↓Div1 [ngx.components.UIDynamicElement-1687253721518]: 
+    beanData: '{"ionBean":"DivTag"}'
+    tagName: div
+    ↓some_text [ngx.components.UIText-1687253721521]: 
+      textValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:Progress bar indeterminate:
+  ↓Break1 [ngx.components.UIDynamicElement-1687253902366]: 
+    beanData: '{"ionBean":"Break"}'
+    selfClose: true
+    tagName: br
+  ↓ProgressBar1 [ngx.components.UIDynamicElement-1687253721524]: 
+    beanData: |
+      '{
+       "ionBean": "ProgressBar",
+       "IonColor": "plain:warning",
+       "Type": "plain:indeterminate"
+      }'
+    tagName: ion-progress-bar
+  ↓Break4 [ngx.components.UIDynamicElement-1687262367169]: 
+    beanData: '{"ionBean":"Break"}'
+    selfClose: true
+    tagName: br
+  ↓Break5 [ngx.components.UIDynamicElement-1687262367172]: 
+    beanData: '{"ionBean":"Break"}'
+    selfClose: true
+    tagName: br
+  ↓Div2 [ngx.components.UIDynamicElement-1687262371874]: 
+    beanData: '{"ionBean":"DivTag"}'
+    tagName: div
+    ↓some_text [ngx.components.UIText-1687273047286]: 
+      textValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:Progress bar sequence execution:
+    ↓Break1 [ngx.components.UIDynamicElement-1687273072684]: 
+      beanData: '{"ionBean":"Break"}'
+      selfClose: true
+      tagName: br
+    ↓Button [ngx.components.UIDynamicElement-1687262378116]: 
+      beanData: '{"ionBean":"Button","IonSize":"plain:small"}'
+      tagName: ion-button
+      ↓Label [ngx.components.UIDynamicElement-1687262378111]: 
+        beanData: '{"ionBean":"Label"}'
+        tagName: ion-label
+        ↓some_text [ngx.components.UIText-1687262378113]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Start
+      ↓attr [ngx.components.UIControlEvent-1687262378115]: 
+        ↓CallSequence [ngx.components.UIDynamicAction-1687262391791]: 
+          beanData: |
+            '{
+             "ionBean": "CallSequenceAction",
+             "requestable": "plain:progressbar.main",
+             "noLoading": "plain:true"
+            }'
+          tagName: CallSequence
+        ↓checkStatus [ngx.components.UICustomAction-1687262421398]: 
+          actionValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                  		if(this.global.check){
+                  		        window.clearInterval(this.global.check);
+                  		        this.global.check = null;
+                  		    }
+                  		    this.global.check = window.setInterval(() => {
+                  		        page.call(".checkStatus", {}, null, 10000).then((result)=> {
+                  	                //page.c8o.log.warn("R:" + result.progressbar.status);
+                  	                this.global.pgValue = result.progressbar.status;
+                  	                this.global.pgBgColor = result.progressbar.color;
+                  	                if(result.progressbar.isEnd === true){
+                  	                    window.clearInterval(this.global.check);
+                  	                    this.global.check = null;
+                  	                }
+                  	            });
+                  		    }, 500);
+                  		resolve();
+                  '
+    ↓Break [ngx.components.UIDynamicElement-1687264484586]: 
+      beanData: '{"ionBean":"Break"}'
+      selfClose: true
+      tagName: br
+    ↓ProgressBar [ngx.components.UIDynamicElement-1687264501299]: 
+      beanData: |
+        '{
+         "ionBean": "ProgressBar",
+         "IonColor": "script:this.global.pgBgColor || ''dark''",
+         "Value": "script:this.global.pgValue || 0"
+        }'
+      tagName: ion-progress-bar
 ↓Footer [ngx.components.UIDynamicElement-1491634242460]: 
   beanData: '{"ionBean":"Footer"}'
   comment: Page footer
@@ -89,3 +225,70 @@ title: First page
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: plain:Action 2
+↓PageEvent [ngx.components.UIPageEvent-1687251542308]: 
+  ↓SetGlobal [ngx.components.UIDynamicAction-1687251564387]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:progress_determinate",
+       "Value": "script:0"
+      }'
+    tagName: SetGlobal
+    ↓fake_progress [ngx.components.UICustomAction-1687252196428]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+              		setInterval(() => {
+                    		this.global.progress_determinate += 0.01;
+              
+              		      // Reset the progress bar when it reaches 100%
+              		      // to continuously show the demo
+              		      if (this.global.progress_determinate > 1) {
+              		        setTimeout(() => {
+              		          this.global.progress_determinate = 0;
+              		        }, 1000);
+              		      }
+              	    }, 50);
+              		resolve();
+              '
+  ↓SetGlobal1 [ngx.components.UIDynamicAction-1687252380642]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:progress_buffer",
+       "Value": "script:0.06"
+      }'
+    tagName: SetGlobal
+    ↓SetGlobal [ngx.components.UIDynamicAction-1687252943037]: 
+      beanData: |
+        '{
+         "ionBean": "SetGlobalAction",
+         "Property": "plain:progress_reel",
+         "Value": "script:0"
+        }'
+      tagName: SetGlobal
+      ↓fake_progress [ngx.components.UICustomAction-1687252380645]: 
+        actionValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                		setInterval(() => {
+                	      this.global.progress_buffer += 0.06;
+                	      this.global.progress_reel += 0.06;
+                	
+                	      // Reset the progress bar when it reaches 100%
+                	      // to continuously show the demo
+                	      if (this.global.progress_reel > 1) {
+                	        setTimeout(() => {
+                	          this.global.progress_buffer = 0.06;
+                	          this.global.progress_reel = 0;
+                	        }, 1000);
+                	      }
+                	    }, 1000);
+                		resolve();
+                '
